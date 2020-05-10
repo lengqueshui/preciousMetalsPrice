@@ -1,0 +1,20 @@
+# application.yaml
+# Server settings (ServerProperties)
+server:
+  port: 8080
+  sessionTimeout: 30
+  contextPath: /preciousMetalsPrice
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://39.106.5.215:3306/preciousMetalsPrice
+    username: root
+    password: mah123456
+
+logging:
+  level: info
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml

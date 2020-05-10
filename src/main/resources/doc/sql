@@ -1,0 +1,34 @@
+CREATE DATABASE preciousMetalsPrice;
+
+CREATE TABLE preciousMetalsPrice.metal_price_shanghai_sge (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `date` DATE NOT NULL  COMMENT '时间',
+  `name`  varchar(30) NOT NULL DEFAULT '' COMMENT '金属名称',
+  `opening_quotation_price`  DECIMAL NOT NULL DEFAULT 0 COMMENT '开盘价',
+  `closing_quotation_price`  DECIMAL NOT NULL DEFAULT 0 COMMENT '收盘价',
+  `max_quotation_price`  DECIMAL NOT NULL DEFAULT 0 COMMENT '最高价',
+  `min_quotation_price`  DECIMAL NOT NULL DEFAULT 0 COMMENT '最低价',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT
+CHARSET=utf8mb4 COMMENT='上海黄金交易所贵金属交易价格https://www.sge.com.cn/';
+
+
+
+
+CREATE TABLE preciousMetalsPrice.metal_price_i001 (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `date` DATE NOT NULL  COMMENT '时间',
+  `name`  varchar(30) NOT NULL DEFAULT '' COMMENT '金属名称',
+  `type`  varchar(30) NOT NULL DEFAULT '' COMMENT '品种',
+  `max_quotation_price`  DECIMAl(10, 2) NOT NULL DEFAULT 0 COMMENT '最高价',
+  `min_quotation_price`  DECIMAl(10, 2) NOT NULL DEFAULT 0 COMMENT '最低价',
+  `upDown`  DECIMAl(10, 2) NOT NULL DEFAULT 0 COMMENT '涨跌',
+  `day_price`  DECIMAl(10, 2) NOT NULL DEFAULT 0 COMMENT '今日综合价格',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT
+CHARSET=utf8mb4 COMMENT='中国金属咨询网http://www.i001.com/index.shtml';
+
