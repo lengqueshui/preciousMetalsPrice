@@ -32,3 +32,20 @@ CREATE TABLE preciousMetalsPrice.metal_price_i001 (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT
 CHARSET=utf8mb4 COMMENT='中国金属咨询网http://www.i001.com/index.shtml';
 
+
+CREATE TABLE preciousMetalsPrice.metal_price_hqsmm (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增ID',
+  `date` DATE NOT NULL  COMMENT '时间',
+  `name`  varchar(30) NOT NULL DEFAULT '' COMMENT '金属名称',
+  `price_scope`  varchar(100) NOT NULL DEFAULT '' COMMENT '价格范围',
+  `price_average`  DECIMAl(10, 2) NOT NULL DEFAULT 0 COMMENT '平均范围',
+  `upDown`  DECIMAl(10, 2) NOT NULL DEFAULT 0 COMMENT '涨跌',
+  `units`  varchar(100) NOT NULL DEFAULT '' COMMENT '单位',
+  `price_date`  varchar(100) NOT NULL DEFAULT '' COMMENT '日期',
+  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT
+CHARSET=utf8mb4 COMMENT='有色金属https://hq.smm.cn/gjs';
+
+
