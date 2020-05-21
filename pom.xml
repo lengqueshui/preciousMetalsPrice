@@ -86,13 +86,13 @@
     </dependencies>
 
     <build>
-        <finalName>tools</finalName>
+        <finalName>preciousMetalsPrice</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.sq.tools.MainApplication</mainClass>
+                    <mainClass>com.bsyd.preciousMetalsPrice.MainApplication</mainClass>
                     <executable>true</executable>
                     <finalName></finalName>
                 </configuration>
