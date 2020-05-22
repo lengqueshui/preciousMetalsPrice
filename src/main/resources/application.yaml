@@ -14,6 +14,7 @@ spring:
 
 logging:
   level: info
+  file: /data/log/preciousMetalsPrice.log
 
 
 mybatis:
