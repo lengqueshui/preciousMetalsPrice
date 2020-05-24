@@ -1,6 +1,10 @@
 package com.bsyd.preciousMetalsPrice.service.metals;
 
 import lombok.extern.slf4j.Slf4j;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.springframework.stereotype.Service;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
@@ -19,7 +23,28 @@ public class PlatinumMattheyService implements PageProcessor {
 
     @Override
     public void process(Page page) {
-        log.info("===============" + page.getHtml().get());
+        Document document = Jsoup.parse(page.getHtml().get());
+        Element priceTablesFrame = document.select("[id=priceTablesFrame]").first();
+        for (Element element: priceTablesFrame.children()) {
+            log.info(element.attr("class") + "------->" + element.text());
+            for (Element contentElement: element.children()) {
+                if (!"tbody".equals(contentElement.nodeName())) {
+                    continue;
+                }
+
+                log.info("=========");
+                for (Element trElement: contentElement.children()) {
+                    for (Element thElement: trElement.children()) {
+                        log.info("====" +thElement.text());
+                    }
+                }
+
+            }
+        }
+//        for (Element element: frameElements) {
+//            element.getElementsB
+//            log.info("=========" + element.text());
+//        }
         //London
     }
 
