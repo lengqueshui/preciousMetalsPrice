@@ -21,7 +21,7 @@ public class MetalsTask {
     @Autowired
     private SgeComService sgeComService;
 
-    @Scheduled(cron = "0 30 20 * * ? ")
+    @Scheduled(cron = "0 30 8 * * ? ")
     protected void schedulesRequestPrice() {
         log.info("schedulesRequestPrice start");
         hqSmmService.init();
