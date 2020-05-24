@@ -122,7 +122,7 @@ public class I001ComService implements PageProcessor {
         return site;
     }
 
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         Spider.create(new I001ComService()).addUrl(ROOT_URL + "/index.shtml")
                 .addPipeline(i001PipeLine)

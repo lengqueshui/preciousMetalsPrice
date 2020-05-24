@@ -89,7 +89,7 @@ public class SgeComService implements PageProcessor {
         return site;
     }
 
-    @PostConstruct
+    //@PostConstruct
     public void init(){
         Spider.create(new SgeComService()).addUrl("https://www.sge.com.cn/hqsj")
                 .addPipeline(dataPipeLine)

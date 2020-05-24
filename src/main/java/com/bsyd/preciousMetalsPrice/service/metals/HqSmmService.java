@@ -132,7 +132,7 @@ public class HqSmmService implements PageProcessor {
         return site;
     }
 
-    @PostConstruct
+    //@PostConstruct
     public void init() {
         Spider.create(new HqSmmService()).addUrl(ROOT_URL + "/gjs")
                 .addPipeline(hqSmmPipeLine)
